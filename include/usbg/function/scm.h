@@ -10,8 +10,8 @@
  * Lesser General Public License for more details.
  */
 
-#ifndef USBG_FUNCTION_PSOCK__
-#define USBG_FUNCTION_PSOCK__
+#ifndef USBG_FUNCTION_SCM__
+#define USBG_FUNCTION_SCM__
 
 #include <usbg/usbg.h>
 
@@ -19,8 +19,8 @@
 extern "C" {
 #endif
 
-struct usbg_f_psock;
-typedef struct usbg_f_serial usbg_f_psock;
+struct usbg_f_scm;
+typedef struct usbg_f_serial usbg_f_scm;
 
 #ifdef __cplusplus
 }
