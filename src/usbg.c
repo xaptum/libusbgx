@@ -52,7 +52,7 @@ extern struct usbg_function_type usbg_f_type_phonet;
 extern struct usbg_function_type usbg_f_type_loopback;
 extern struct usbg_function_type usbg_f_type_hid;
 extern struct usbg_function_type usbg_f_type_uac2;
-extern struct usbg_function_type usbg_f_type_scm;
+extern struct usbg_function_type usbg_f_type_hss;
 
 /**
  * @var function_types
@@ -74,7 +74,7 @@ struct usbg_function_type* function_types[] = {
 	[USBG_F_LOOPBACK] = &usbg_f_type_loopback,
 	[USBG_F_HID] = &usbg_f_type_hid,
 	[USBG_F_UAC2] = &usbg_f_type_uac2,
-	[USBG_F_SCM] = &usbg_f_type_scm,
+	[USBG_F_HSS] = &usbg_f_type_hss,
 };
 
 ARRAY_SIZE_SENTINEL(function_types, USBG_FUNCTION_TYPE_MAX);
