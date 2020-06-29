@@ -12,51 +12,51 @@
 
 #include "usbg/usbg.h"
 #include "usbg/usbg_internal.h"
-//#include "usbg/function/scm.h"
+//#include "usbg/function/hss.h"
 
 #ifdef HAS_GADGET_SCHEMES
 #include <libconfig.h>
 #endif
 
-struct usbg_f_scm {
+struct usbg_f_hss {
 	struct usbg_function func;
 };
 
-GENERIC_ALLOC_INST(scm, struct usbg_f_scm, func);
+GENERIC_ALLOC_INST(hss, struct usbg_f_hss, func);
 
-GENERIC_FREE_INST(scm, struct usbg_f_scm, func);
+GENERIC_FREE_INST(hss, struct usbg_f_hss, func);
 
-static int scm_set_attrs(struct usbg_function *f, void *f_attrs)
+static int hss_set_attrs(struct usbg_function *f, void *f_attrs)
 {
 	return USBG_SUCCESS;
 }
 
-static int scm_get_attrs(struct usbg_function *f, void *f_attrs)
+static int hss_get_attrs(struct usbg_function *f, void *f_attrs)
 {
 	return USBG_SUCCESS;
 }
 
-static int scm_libconfig_import(struct usbg_function *f,
+static int hss_libconfig_import(struct usbg_function *f,
 				  config_setting_t *root)
 {
 	return USBG_SUCCESS;
 }
 
-static int scm_libconfig_export(struct usbg_function *f,
+static int hss_libconfig_export(struct usbg_function *f,
 				  config_setting_t *root)
 {
 	return USBG_SUCCESS;
 }
 
-#define SCM_FUNCTION_OPTS			\
-	.alloc_inst = scm_alloc_inst,		\
-	.free_inst = scm_free_inst,	        \
-	.set_attrs = scm_set_attrs,	        \
-	.get_attrs = scm_get_attrs,	        \
-	.export = scm_libconfig_export,	\
-	.import = scm_libconfig_import
+#define HSS_FUNCTION_OPTS			\
+	.alloc_inst = hss_alloc_inst,		\
+	.free_inst = hss_free_inst,	        \
+	.set_attrs = hss_set_attrs,	        \
+	.get_attrs = hss_get_attrs,	        \
+	.export = hss_libconfig_export,	\
+	.import = hss_libconfig_import
 
-struct usbg_function_type usbg_f_type_scm = {
-	.name = "scm",
-	SCM_FUNCTION_OPTS,
+struct usbg_function_type usbg_f_type_hss = {
+	.name = "hss",
+	HSS_FUNCTION_OPTS,
 };
